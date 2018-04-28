@@ -12,9 +12,11 @@
 		61ACD1EA209529A5007FF921 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61ACD1E8209529A5007FF921 /* Main.storyboard */; };
 		61ACD1EC209529A5007FF921 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61ACD1EB209529A5007FF921 /* Assets.xcassets */; };
 		61ACD1EF209529A5007FF921 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61ACD1ED209529A5007FF921 /* LaunchScreen.storyboard */; };
+		C175B46574A2259E86FF5FB7 /* Pods_Safe_Adventures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64461B6340B11AABC7C8BD13 /* Pods_Safe_Adventures.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		47720BBD963111D18A6222B6 /* Pods-Safe Adventures.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Safe Adventures.release.xcconfig"; path = "Pods/Target Support Files/Pods-Safe Adventures/Pods-Safe Adventures.release.xcconfig"; sourceTree = "<group>"; };
 		61ACD1E1209529A5007FF921 /* Safe Adventures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Safe Adventures.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61ACD1E4209529A5007FF921 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61ACD1E6209529A5007FF921 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		61ACD1EB209529A5007FF921 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		61ACD1EE209529A5007FF921 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		61ACD1F0209529A5007FF921 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64461B6340B11AABC7C8BD13 /* Pods_Safe_Adventures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Safe_Adventures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE4FD84467CFAEE3A6A95A7C /* Pods-Safe Adventures.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Safe Adventures.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Safe Adventures/Pods-Safe Adventures.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C175B46574A2259E86FF5FB7 /* Pods_Safe_Adventures.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		042B1A12C57777A14847B216 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				64461B6340B11AABC7C8BD13 /* Pods_Safe_Adventures.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		61ACD1D8209529A5007FF921 = {
 			isa = PBXGroup;
 			children = (
 				61ACD1E3209529A5007FF921 /* Safe Adventures */,
 				61ACD1E2209529A5007FF921 /* Products */,
+				751F959D5C3BA65495F4105C /* Pods */,
+				042B1A12C57777A14847B216 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +79,15 @@
 			path = "Safe Adventures";
 			sourceTree = "<group>";
 		};
+		751F959D5C3BA65495F4105C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CE4FD84467CFAEE3A6A95A7C /* Pods-Safe Adventures.debug.xcconfig */,
+				47720BBD963111D18A6222B6 /* Pods-Safe Adventures.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 61ACD1F3209529A5007FF921 /* Build configuration list for PBXNativeTarget "Safe Adventures" */;
 			buildPhases = (
+				E8009B3B7B52F2428296EA23 /* [CP] Check Pods Manifest.lock */,
 				61ACD1DD209529A5007FF921 /* Sources */,
 				61ACD1DE209529A5007FF921 /* Frameworks */,
 				61ACD1DF209529A5007FF921 /* Resources */,
+				68391F0E7AAD59402402C5C4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,6 +156,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		68391F0E7AAD59402402C5C4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Safe Adventures/Pods-Safe Adventures-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ForecastIO/ForecastIO.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ForecastIO.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Safe Adventures/Pods-Safe Adventures-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8009B3B7B52F2428296EA23 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Safe Adventures-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		61ACD1DD209529A5007FF921 /* Sources */ = {
@@ -272,6 +337,7 @@
 		};
 		61ACD1F4209529A5007FF921 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE4FD84467CFAEE3A6A95A7C /* Pods-Safe Adventures.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -286,6 +352,7 @@
 		};
 		61ACD1F5209529A5007FF921 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47720BBD963111D18A6222B6 /* Pods-Safe Adventures.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
