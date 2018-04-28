@@ -1,0 +1,16 @@
+{
+    "essentials": [
+                   "Map","Waterproof Hiking Shoes","Sunscreen and sunglasses","Flashlight/Headlamp","First Aid Kit","Firestarter","Matches","Knife","Snacks","Socks","2-3 L of water","Hat","Watch"
+                   ],
+    "dress": {
+        "30":["Hard Shell Pants","Long Underwear","Wool Gloves","Puffy Insulated Jacket w/Hood","Waterproof and Windproof Jacket","Insulated Fleece"],
+        "40":["Warm Fleece w/Zip and Hood","Flannel Shirt","Waterproof and Windproof Jacket","Cool Dry Long Pants","Wool Gloves"],
+        "50":["Insulated Fleece","Cool Dry Long Pants"],
+        "70":["Shorts/Pants/Convertible Pants"]
+    },
+    "condition": {
+        "sunny":["Bandana","Small Towel","Lightweight T-Shirt"],
+        "rain":["Rain Jacket"],
+        "cloudy":["Long Sleeve Shirt","Windproof Jacket"]
+    }
+}
