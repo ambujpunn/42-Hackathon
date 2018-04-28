@@ -1,0 +1,46 @@
+{
+    "parks": [
+              {
+              "states": "CA",
+              "latLong": "lat:37.84883288, long:-119.5571873",
+              "description": "Not just a great valley, but a shrine to human foresight, the strength of granite, the power of glaciers, the persistence of life, and the tranquility of the High Sierra.\n\nFirst protected in 1864, Yosemite National Park is best known for its waterfalls, but within its nearly 1,200 square miles, you can find deep valleys, grand meadows, ancient giant sequoias, a vast wilderness area, and much more.",
+              "designation": "National Park",
+              "parkCode": "yose",
+              "id": "4324B2B4-D1A3-497F-8E6B-27171FAE4DB2",
+              "directionsInfo": "You can drive to Yosemite all year and enter via Highways 41, 140, and 120 from the west. Tioga Pass Entrance (via Highway 120 from the east) is closed from around November through late May or June. Hetch Hetchy is open all year but may close intermittently due to snow.\n\nPlease note that GPS units do not always provide accurate directions to or within Yosemite.",
+              "directionsUrl": "http://www.nps.gov/yose/planyourvisit/driving.htm",
+              "fullName": "Yosemite National Park",
+              "url": "https://www.nps.gov/yose/index.htm",
+              "weatherInfo": "Yosemite National Park covers nearly 1,200 square miles (3,100 square km) in the Sierra Nevada, with elevations ranging from about 2,000 feet (600 m) to 13,000 ft (4,000 m). Yosemite receives 95% of its precipitation between October and May (and over 75% between November and March). Most of Yosemite is blanketed in snow from about November through May. (Yosemite Valley can be rainy or snowy in any given winter storm.)",
+              "name": "Yosemite"
+              },
+              {
+              "states": "ID,MT,WY",
+              "latLong": "lat:44.59824417, long:-110.5471695",
+              "description": "Visit Yellowstone and experience the world's first national park. Marvel at a volcano’s hidden power rising up in colorful hot springs, mudpots, and geysers. Explore mountains, forests, and lakes to watch wildlife and witness the drama of the natural world unfold. Discover the history that led to the conservation of our national treasures “for the benefit and enjoyment of the people.”",
+              "designation": "National Park",
+              "parkCode": "yell",
+              "id": "F58C6D24-8D10-4573-9826-65D42B8B83AD",
+              "directionsInfo": "Yellowstone National Park covers nearly 3,500 square miles in the northwest corner of Wyoming (3% of the park is in Montana and 1% is in Idaho). Yellowstone has five entrance stations, and several are closed to regular vehicles during winter. It takes many hours to drive between these entrances, so be sure to check the status of roads at the entrance you intend to use while planning your trip and before you arrive.",
+              "directionsUrl": "http://www.nps.gov/yell/planyourvisit/directions.htm",
+              "fullName": "Yellowstone National Park",
+              "url": "https://www.nps.gov/yell/index.htm",
+              "weatherInfo": "Yellowstone's weather can vary quite a bit, even in a single day. In the summer, daytime highs can exceed 70F (25C), only to drop 20 or more degrees when a thunderstorm rolls through. It can snow during any month of the year, and winter lows frequently drop below zero, especially at night. Bring a range of clothing options, including a warm jacket and rain gear, even in the summer.",
+              "name": "Yellowstone"
+              },
+              {
+              "states": "UT",
+              "latLong": "lat:37.29839254, long:-113.0265138",
+              "description": "Follow the paths where ancient native people and pioneers walked. Gaze up at massive sandstone cliffs of cream, pink, and red that soar into a brilliant blue sky. Experience wilderness in a narrow slot canyon. Zion’s unique array of plants and animals will enchant you as you absorb the rich history of the past and enjoy the excitement of present day adventures.",
+              "designation": "National Park",
+              "parkCode": "zion",
+              "id": "41BAB8ED-C95F-447D-9DA1-FCC4E4D808B2",
+              "directionsInfo": "Zion National Park is located on State Route 9 in Springdale, Utah.",
+              "directionsUrl": "http://www.nps.gov/zion/planyourvisit/directions.htm",
+              "fullName": "Zion National Park",
+              "url": "https://www.nps.gov/zion/index.htm",
+              "weatherInfo": "Zion is known for a wide range of weather conditions. Temperatures vary with changes in elevation and day/night temperatures may differ by over 30°F.\n\nIn summer, temperatures in Zion National Park often exceed 100°F/38°C. Zion experiences monsoons from mid-July into September that results in an increased risk of flash floods. Always be aware of the threat of storms and lightning and be prepared for a wide range of weather conditions. Winters are generally mild.",
+              "name": "Zion"
+              }
+              ]
+}
