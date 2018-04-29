@@ -51,13 +51,9 @@ class ViewController: UIViewController {
     private let darkSkyAPIKey = "4a76b0aa817f065da1ac4e81d94b70de"
     let weatherClient: DarkSkyClient
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        weatherClient = DarkSkyClient(apiKey: darkSkyAPIKey)
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
-    
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        weatherClient = DarkSkyClient(apiKey: darkSkyAPIKey)
+        super.init(coder: aDecoder)
     }
     
     override func viewDidLoad() {
@@ -67,6 +63,7 @@ class ViewController: UIViewController {
         loadPark("yosemite") { (park) in
             if park != nil {
                 print(park!.description)
+                let (lat, long) = parseLatLongString(latLongString: park!.location)
             }
         }
         
@@ -103,16 +100,20 @@ class ViewController: UIViewController {
         }
     }
     
-    /*
-    private func parseLatLongString(latLongString: String) -> (lat: String, long: String) {
+    private func parseLatLongString(latLongString: String) -> (String, String) {
         // Format is: "lat:37.29839254, long:-113.0265138"
         let latLongSplitArray = latLongString.split(separator: ",")
-        let lat = latLongSplitArray.first
-        let long = latLongSplitArray.last
+        // Will not break because of mocked out data and its a hackathon so relax bro
+        let latString = String(latLongSplitArray.first!)
+        let longString = String(latLongSplitArray.last!)
         
-        // Format is: "lat:37.29839254" and "long:-113.0265138"
-        if let
-    }*/
+        // Format is: "lat:37.29839254", "long:-113.0265138"
+        let indexColonLat = latString.index(after:latString.index(of: ":")!)
+        let indexColonLong = longString.index(after: longString.index(of: ":")!)
+        
+        // Force unwrapping because we are sure of the format mentioned above^
+        return (String(latString[indexColonLat...]), String(longString[indexColonLong...]))
+    }
     
     private func loadHikingGear(_ name: String, completionHandler: (HikingGear) -> Void) {
         if let hikingGearJsonData = loadJson("hiking-gear") {
