@@ -25,6 +25,19 @@ struct Park: Decodable {
     }
 }
 
+struct HikingGear: Decodable {
+    var essentials: [String]
+    var clothing: [String: [String]]
+    var condition: [String: [String]]
+    
+    enum CodingKeys: String, CodingKey {
+        case clothing = "dress"
+        
+        case essentials
+        case condition
+    }
+}
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -50,11 +63,11 @@ class ViewController: UIViewController {
         }
     }
     
-    private func loadHikingGear(_ name: String, completionHandler: (Park) -> Void) {
-        if let parkJsonData = loadJson("parks") {
+    private func loadHikingGear(_ name: String, completionHandler: (HikingGear) -> Void) {
+        if let hikingGearJsonData = loadJson("hiking-gear") {
             do {
-                let park = try JSONDecoder().decode(Park.self, from: parkJsonData)
-                completionHandler(park)
+                let hikingGear = try JSONDecoder().decode(HikingGear.self, from: hikingGearJsonData)
+                completionHandler(hikingGear)
             } catch {
                 print("error:\(error)")
             }
