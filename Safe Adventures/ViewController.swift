@@ -55,7 +55,7 @@ struct Weather {
     var dayTempMin: Float?
     var dayTempMinTime: Date?
     var summary: String?
-    var iconInfo: Icon?
+    var condition: String?
     var alert: String?
     
     init(today: Bool, foreCast: Forecast) {
@@ -66,7 +66,7 @@ struct Weather {
         self.dayTempMaxTime = foreCast.daily?.data.first?.apparentTemperatureMaxTime
         self.dayTempMinTime = foreCast.daily?.data.first?.apparentTemperatureMinTime
         self.summary = foreCast.daily?.data.first?.summary
-        self.iconInfo = foreCast.daily?.data.first?.icon
+        self.condition = foreCast.daily?.data.first?.icon?.rawValue
         self.alert = foreCast.alerts?.first?.description
     }
 }
@@ -95,10 +95,15 @@ class ViewController: UIViewController {
                     print(weatherDataModel)
                 })
                 let testDate = Date(timeIntervalSince1970: 1525003200)
+                // Include weakself **
                 weatherDate(date: testDate, lat: lat, long: long, completionHandler: { (forecast) in
                     let weatherDataModel = Weather(today: false, foreCast: forecast)
                     print("later: \n")
                     print(weatherDataModel)
+                    self.loadHikingGear(locationTemp: weatherDataModel.currentTemp, locationCondition: weatherDataModel.condition, completionHandler: { (hikingGear) in
+                        print("Gear: \n")
+                        print("\(hikingGear.essentials)\n \(hikingGear.clothing["result"]!)\n \(hikingGear.condition["result"]!)")
+                    })
                 })
             }
         }
@@ -177,10 +182,39 @@ class ViewController: UIViewController {
         return (String(latString[indexColonLat...]), String(longString[indexColonLong...]))
     }
     
-    private func loadHikingGear(_ name: String, completionHandler: (HikingGear) -> Void) {
+    private func loadHikingGear(locationTemp: Float?, locationCondition: String?, completionHandler: (HikingGear) -> Void) {
         if let hikingGearJsonData = loadJson("hiking-gear") {
             do {
-                let hikingGear = try JSONDecoder().decode(HikingGear.self, from: hikingGearJsonData)
+                var hikingGear = try JSONDecoder().decode(HikingGear.self, from: hikingGearJsonData)
+                var clothing = [String]()
+                // Get tens value of temperature (whole value)
+                let tensTemp = Int(locationTemp!)/10 * 10
+                if tensTemp < 40 {
+                    clothing = hikingGear.clothing["30"]!
+                }
+                else if tensTemp >= 40 && tensTemp < 50 {
+                    clothing = hikingGear.clothing["40"]!
+                }
+                else if tensTemp >= 50 && tensTemp < 70 {
+                    clothing = hikingGear.clothing["50"]!
+                }
+                else {
+                    clothing = hikingGear.clothing["70"]!
+                }
+                hikingGear.clothing["result"] = clothing
+                
+                var condition = [String]()
+                if locationCondition! == "clear_day" {
+                    condition = hikingGear.condition["sunny"]!
+                }
+                else if locationCondition! == "rain" {
+                    condition = hikingGear.condition["rain"]!
+                }
+                else {
+                    condition = hikingGear.condition["cloudy"]!
+                }
+                hikingGear.condition["result"] = condition
+                
                 completionHandler(hikingGear)
             } catch {
                 print("error:\(error)")
